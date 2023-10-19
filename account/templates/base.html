@@ -39,7 +39,14 @@
         </ul>
     {% endif %}
     <div id="content">
-        {% block content %}{% endblock content %}
+        {% block content %}
+            <h2>What's happening</h2>
+            <div id="action-list">
+                {% for action in actions  %}
+                    {% include "actions/action/detail.html" %}
+                {% endfor %}
+            </div>
+        {% endblock content %}
     </div>
 
     <script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>

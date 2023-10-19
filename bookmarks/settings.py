@@ -39,6 +39,7 @@ ALLOWED_HOSTS = ["mysite.com", "localhost", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
+    "actions.apps.ActionsConfig",
     "images.apps.ImagesConfig",
     "account.apps.AccountConfig",
     "django.contrib.admin",
@@ -172,4 +173,6 @@ SOCIAL_AUTH_PIPELINE = [
     "social_core.pipeline.user.user_details",
 ]
 
-print(SOCIAL_AUTH_GOOGLE_OAUTH2_KEY)
+REDIS_HOST = os.getenv("REDIS_HOST")
+REDIS_PORT = os.getenv("REDIS_PORT")
+REDIS_DB = os.getenv("REDIS_DB")
